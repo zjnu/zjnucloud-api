@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from news.models import Type
-from news.models import ZSXW
+from news.models import Type, ZSXW, ZSXWDetail, XSDT, XSDTDetail, TZGG, TZGGDetail
 
 
 class NewsTypeSerializer(serializers.HyperlinkedModelSerializer):
@@ -22,5 +21,74 @@ class NewsZSXWSerializer(serializers.ModelSerializer):
             'date',
             'author',
             'hits'
+        )
+
+
+class NewsZSXWDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ZSXWDetail
+        fields = (
+            'articleId',
+            'title',
+            'date',
+            'author',
+            'deptname',
+            'videolink',
+            'videocover',
+            'content'
+        )
+
+
+class NewsXSDTSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = XSDT
+        fields = (
+            'articleId',
+            'title',
+            'overview',
+            'date',
+            'author',
+            'hits'
+        )
+
+
+class NewsXSDTDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = XSDTDetail
+        fields = (
+            'articleId',
+            'title',
+            'date',
+            'author',
+            'deptname',
+            'videolink',
+            'videocover',
+            'content'
+        )
+
+
+class NewsTZGGSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TZGG
+        fields = (
+            'articleId',
+            'title',
+            'overview',
+            'date',
+            'author',
+            'hits'
+        )
+
+
+class NewsTZGGDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TZGGDetail
+        fields = (
+            'articleId',
+            'title',
+            'date',
+            'author',
+            'deptname',
+            'content'
         )
 

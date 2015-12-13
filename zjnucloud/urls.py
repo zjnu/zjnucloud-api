@@ -34,6 +34,7 @@ class UserViewSet(viewsets.ModelViewSet):
 # Routers provide a way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+# router.register(r'news', NewsViewSet)
 
 
 # Wire up our API using automatic URL routing.
@@ -41,5 +42,6 @@ router.register(r'users', UserViewSet)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^', include('news.urls')),
+    url(r'^', include('speech.urls')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

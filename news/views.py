@@ -1,6 +1,7 @@
 from rest_framework import generics
-from news.models import Type, ZSXW
-from news.serializers import NewsTypeSerializer, NewsZSXWSerializer
+
+from news.serializers import *
+
 
 # Create your views here.
 
@@ -18,9 +19,65 @@ class NewsZSXWList(generics.ListAPIView):
     serializer_class = NewsZSXWSerializer
 
 
-class NewsZSXWDetail(generics.RetrieveAPIView):
+class NewsZSXWSingle(generics.RetrieveAPIView):
     """
 
     """
     queryset = ZSXW.objects.all()
     serializer_class = NewsZSXWSerializer
+
+
+class NewsZSXWDetail(generics.RetrieveAPIView):
+    """
+
+    """
+    queryset = ZSXWDetail.objects.all()
+    serializer_class = NewsZSXWDetailSerializer
+
+
+class NewsXSDTList(generics.ListAPIView):
+    """
+
+    """
+    queryset = XSDT.objects.all()
+    serializer_class = NewsXSDTSerializer
+
+
+class NewsXSDTSingle(generics.RetrieveAPIView):
+    """
+
+    """
+    queryset = XSDT.objects.all()
+    serializer_class = NewsXSDTSerializer
+
+
+class NewsXSDTDetail(generics.RetrieveAPIView):
+    """
+
+    """
+    queryset = XSDTDetail.objects.all()
+    serializer_class = NewsXSDTDetailSerializer
+
+
+class NewsTZGGList(generics.ListAPIView):
+    """
+
+    """
+    queryset = TZGG.objects.all()
+    serializer_class = NewsTZGGSerializer
+
+
+class NewsTZGGSingle(generics.RetrieveAPIView):
+    """
+
+    """
+    queryset = TZGG.objects.all()
+    serializer_class = NewsTZGGSerializer
+
+
+class NewsTZGGDetail(generics.RetrieveAPIView):
+    """
+
+    """
+    queryset = TZGGDetail.objects.all()
+    serializer_class = NewsTZGGDetailSerializer
