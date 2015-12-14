@@ -81,3 +81,29 @@ class NewsTZGGDetail(generics.RetrieveAPIView):
     """
     queryset = TZGGDetail.objects.all()
     serializer_class = NewsTZGGDetailSerializer
+
+
+class NewsChuYangList(generics.ListAPIView):
+    """
+
+    """
+    queryset = ChuYang.objects.all()
+    serializer_class = NewsChuYangSerializer
+
+
+class NewsChuYangSingle(generics.RetrieveAPIView):
+    """
+
+    """
+    queryset = ChuYang.objects.all()
+    serializers = NewsChuYangSerializer
+
+
+class NewsChuYangDetail(generics.RetrieveAPIView):
+    """
+
+    """
+    queryset = ChuYangDetail.objects.all()
+    serializer_class = NewsChuYangDetailSerializer
+
+

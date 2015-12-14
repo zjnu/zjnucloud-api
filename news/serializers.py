@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from news.models import Type, ZSXW, ZSXWDetail, XSDT, XSDTDetail, TZGG, TZGGDetail
+from news.models import Type, ZSXW, ZSXWDetail, XSDT, XSDTDetail, TZGG, TZGGDetail, ChuYang, ChuYangDetail
 
 
 class NewsTypeSerializer(serializers.HyperlinkedModelSerializer):
@@ -92,3 +92,22 @@ class NewsTZGGDetailSerializer(serializers.ModelSerializer):
             'content'
         )
 
+class NewsChuYangSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ChuYang
+        fields = (
+            'articleId',
+            'title',
+            'date'
+        )
+
+class NewsChuYangDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ChuYangDetail
+        fields = (
+            'articleId',
+            'title',
+            'date',
+            'author',
+            'content'
+        )

@@ -13,6 +13,10 @@ urlpatterns = [
     url(r'^news/tzgg/$', views.NewsTZGGList.as_view()),
     url(r'^news/tzgg/(?P<pk>[0-9]+)/$', views.NewsTZGGSingle.as_view()),
     url(r'^news/tzgg/(?P<pk>[0-9]+)/detail/$', views.NewsTZGGDetail.as_view()),
+
+    url(r'^news/chuyang/$', views.NewsChuYangList.as_view()),
+    url(r'^news/chuyang/(?P<pk>[0-9]+)/$', views.NewsChuYangSingle.as_view()),
+    url(r'^news/chuyang/(?P<pk>[0-9]+)/detail/$', views.NewsChuYangDetail.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

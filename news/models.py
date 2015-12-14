@@ -87,3 +87,24 @@ class TZGGDetail(models.Model):
     class Meta:
         ordering = ('-articleId',)
         db_table = 'news_tzgg_detail'
+
+
+class ChuYang(models.Model):
+    articleId = models.IntegerField(primary_key=True)
+    title = models.CharField(max_length=255, blank=True, default='')
+    date = models.CharField(max_length=255, default='')
+
+    class Meta:
+        ordering = ('-articleId',)
+        db_table = 'news_chuyang'
+
+class ChuYangDetail(models.Model):
+    articleId = models.IntegerField(primary_key=True)
+    title = models.CharField(max_length=255, blank=True, default='')
+    date = models.CharField(max_length=255, default='')
+    author = models.CharField(max_length=255, default='')
+    content = models.TextField(default='')
+
+    class Meta:
+        ordering = ('-articleId',)
+        db_table = 'news_chuyang_detail'
