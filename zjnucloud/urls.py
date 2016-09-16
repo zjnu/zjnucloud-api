@@ -43,5 +43,6 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^', include('news.urls')),
     url(r'^', include('speech.urls')),
+    url(r'^', include('banner.urls')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
