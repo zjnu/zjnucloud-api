@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'news',
     'speech',
     'banner',
+    'keydates',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -95,7 +96,7 @@ DATABASES = {
         'NAME': 'zjnucloud',
         'USER': 'root',
         'PASSWORD': '{ddmax}',
-        'HOST': '45.124.65.169',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }

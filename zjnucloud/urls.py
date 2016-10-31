@@ -44,5 +44,6 @@ urlpatterns = [
     url(r'^', include('news.urls')),
     url(r'^', include('speech.urls')),
     url(r'^', include('banner.urls')),
+    url(r'^', include('keydates.urls')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
