@@ -1,0 +1,4 @@
+uwsgi
+Django==1.8.15
+djangorestframework
+mysqlclient

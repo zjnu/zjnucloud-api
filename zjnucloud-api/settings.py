@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ma#lv2wg28oyablp!a=b03b0w)g+-dj0d8eke(nmvh0y*m=!ca'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*',
+]
 
 
 # Application definition
@@ -63,10 +65,10 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
     # Pagination
-    'DEFAULT_PAGINATION_CLASS': 'zjnucloud.pagination.MyPagination',
+    'DEFAULT_PAGINATION_CLASS': 'zjnucloud-api.pagination.MyPagination',
 }
 
-ROOT_URLCONF = 'zjnucloud.urls'
+ROOT_URLCONF = 'zjnucloud-api.urls'
 
 TEMPLATES = [
     {
@@ -84,20 +86,25 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'zjnucloud.wsgi.application'
+WSGI_APPLICATION = 'zjnucloud-api.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+DB_HOST = os.environ.get('DB_HOST', 'localhost')
+DB_PORT = os.environ.get('DB_PORT', '3306')
+DB_NAME = os.environ.get('DB_NAME', 'zjnucloud')
+DB_USERNAME = os.environ.get('DB_USERNAME', 'root')
+DB_PASSWORD = os.environ.get('DB_PASSWORD', '{ddmax}')
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'zjnucloud',
-        'USER': 'root',
-        'PASSWORD': '{ddmax}',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'HOST': DB_HOST,
+        'PORT': DB_PORT,
+        'NAME': DB_NAME,
+        'USER': DB_USERNAME,
+        'PASSWORD': DB_PASSWORD,
     }
 }
 
@@ -124,3 +131,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = '/opt/django/static/'
